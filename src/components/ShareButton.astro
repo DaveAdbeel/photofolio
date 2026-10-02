@@ -8,24 +8,42 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<button class="share" type="button" data-share-title={title} aria-label="Share this post">
-  <svg class="share__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-    <circle cx="18" cy="5" r="2.6" stroke="currentColor" stroke-width="1.6" />
-    <circle cx="6" cy="12" r="2.6" stroke="currentColor" stroke-width="1.6" />
-    <circle cx="18" cy="19" r="2.6" stroke="currentColor" stroke-width="1.6" />
-    <path d="M8.3 10.8l7.4-4.3M8.3 13.2l7.4 4.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+<button
+  class="share"
+  type="button"
+  data-share-title={title}
+  aria-label="Compartir esta entrada"
+>
+  <svg
+    class="share__icon"
+    viewBox="0 0 24 24"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <circle cx="18" cy="5" r="2.6" stroke="currentColor" stroke-width="1.6"
+    ></circle>
+    <circle cx="6" cy="12" r="2.6" stroke="currentColor" stroke-width="1.6"
+    ></circle>
+    <circle cx="18" cy="19" r="2.6" stroke="currentColor" stroke-width="1.6"
+    ></circle>
+    <path
+      d="M8.3 10.8l7.4-4.3M8.3 13.2l7.4 4.3"
+      stroke="currentColor"
+      stroke-width="1.6"
+      stroke-linecap="round"></path>
   </svg>
-  <span class="share__label">Share</span>
+  <span class="share__label">Compartir</span>
 </button>
 
 <script>
-  const buttons = document.querySelectorAll<HTMLButtonElement>('.share');
+  const buttons = document.querySelectorAll<HTMLButtonElement>(".share");
 
   buttons.forEach((btn) => {
-    const labelEl = btn.querySelector<HTMLElement>('.share__label');
-    const defaultLabel = labelEl?.textContent ?? 'Share';
+    const labelEl = btn.querySelector<HTMLElement>(".share__label");
+    const defaultLabel = labelEl?.textContent ?? "Compartir";
 
-    btn.addEventListener('click', async () => {
+    btn.addEventListener("click", async () => {
       const url = location.href;
       const title = btn.dataset.shareTitle || document.title;
 
@@ -43,16 +61,16 @@ const { title } = Astro.props;
       try {
         await navigator.clipboard.writeText(url);
         if (labelEl) {
-          labelEl.textContent = 'Link copied';
-          btn.classList.add('is-copied');
+          labelEl.textContent = "Enlace copiado";
+          btn.classList.add("is-copied");
           setTimeout(() => {
             labelEl.textContent = defaultLabel;
-            btn.classList.remove('is-copied');
+            btn.classList.remove("is-copied");
           }, 2000);
         }
       } catch {
         // 3) Last resort if clipboard access is blocked.
-        window.prompt('Copy this link:', url);
+        window.prompt("Copia este enlace:", url);
       }
     });
   });

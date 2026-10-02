@@ -9,16 +9,16 @@ export const GET: APIRoute = ({ site }) => {
 
   const body = `# ${siteInfo.name}
 
-> ${siteInfo.description} The site has the gallery, about me, contact and license. Content may be cited with attribution; please do not use the images or text to train machine-learning models.
+> ${siteInfo.description} Este sitio incluye la galería, información sobre mí, contacto y licencia. El contenido puede citarse con atribución; por favor, no uses las imágenes ni el texto para entrenar modelos de machine learning.
 
-## Galleries
-- [My work](${url('/')}): photographs that im pride of.
+## Galerías
+- [Mi trabajo](${url('/')}): fotografías de las que me siento orgulloso.
 
-### About
-- [About](${url('/about')}): a short biography of ${siteInfo.name}.
-- [Contact](${url('/contact')}): ways to follow and reach out.
+### Sobre mí
+- [Acerca de](${url('/about')}): una breve biografía de ${siteInfo.name}.
+- [Contacto](${url('/contact')}): formas de seguirme y comunicarme.
 
-## Elsewhere
+## En otros lugares
 - Instagram: ${social.instagram}
 - LinkedIn: ${social.linkedin}
 - GitHub: ${social.github}

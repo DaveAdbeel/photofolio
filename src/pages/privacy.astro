@@ -8,222 +8,214 @@ import { site } from "../config";
 // NOTE: This is a sensible, privacy-friendly starting point — not legal advice.
 // Review it (and the name/links) before you publish, and adjust for your
 // jurisdiction.
-const lastUpdated = "1 January 2026";
+const lastUpdated = "1 de enero de 2026";
 ---
 
 <Layout
-    title="Privacy"
-    description="How this site handles your data — no cookies, no advertising, no accounts, and no analytics or tracking. Written to meet EU/UK GDPR, US (CCPA/CalOPPA), and Canadian (PIPEDA/Law 25) expectations."
+    title="Privacidad"
+    description="Cómo este sitio maneja tus datos — sin cookies, sin publicidad, sin cuentas y sin analítica ni seguimiento. Escrito para cumplir con la Ley 19.628 sobre Protección de la Vida Privada y la normativa chilena aplicable."
 >
     <article class="page prose">
-        <h1 class="page__title">Privacy Policy</h1>
+        <h1 class="page__title">Política de privacidad</h1>
 
         <p class="lede">
-            This is a personal photography and writing site. It is built to
-            respect your privacy by default: no cookies, no advertising, no
-            cross-site tracking, no accounts, and no forms that collect your
-            personal data. This page explains the little data that is involved
-            and the rights you have, wherever you live.
+            Este es un sitio personal de fotografía y escritura. Está diseñado
+            para respetar tu privacidad por defecto: sin cookies, sin
+            publicidad, sin seguimiento entre sitios, sin cuentas y sin
+            formularios que recopilen tus datos personales. Esta página explica
+            los pocos datos que intervienen y los derechos que tienes,
+            dondequiera que vivas.
         </p>
 
-        <p><em>Last updated: {lastUpdated}.</em></p>
+        <p><em>Última actualización: {lastUpdated}.</em></p>
 
-        <h2>Who is responsible</h2>
+        <h2>¿Quién es responsable?</h2>
         <p>
-            This site is operated by me, {site.name}{site.nameZh && (
-                <> (<span class="name-zh">{site.nameZh}</span>)</>
-            )}. For the purposes of data-protection
-            law I am the “data controller” (EU/UK GDPR), the individual
-            accountable for personal information (Canada’s PIPEDA), and the
-            person in charge of personal information (Québec’s Law 25). You can
-            reach me through the <a class="text-link" href="/contact"
-                >contact page</a
-            >.
+            Este sitio es operado por mí, {site.name}{
+                site.nameZh && (
+                    <>
+                        {" "}
+                        (<span class="name-zh">{site.nameZh}</span>)
+                    </>
+                )
+            }. A efectos de la normativa chilena sobre protección de datos
+            personales, soy el responsable del tratamiento de la información que
+            se procese en el marco de este sitio. Puedes contactarme a través de
+            la
+            <a class="text-link" href="/contact">página de contacto</a>.
         </p>
 
-        <h2>The short version</h2>
+        <h2>Versión breve</h2>
         <ul>
-            <li>No cookies are set by this site.</li>
-            <li>No advertising, ad networks, or cross-site tracking.</li>
-            <li>No accounts, logins, or newsletters.</li>
-            <li>No contact forms — nothing on this site asks you to type in personal data.</li>
+            <li>Este sitio no establece cookies.</li>
             <li>
-                No analytics and no visitor tracking of any kind — nothing is
-                stored on your device except an optional theme preference.
+                No hay publicidad, redes publicitarias ni seguimiento entre
+                sitios.
+            </li>
+            <li>No hay cuentas, inicios de sesión ni boletines.</li>
+            <li>
+                No hay formularios de contacto: nada en este sitio te pide
+                escribir datos personales.
             </li>
             <li>
-                I do not sell, rent, or trade your information, and I never
-                share it for marketing.
+                No hay analítica ni seguimiento de visitantes de ningún tipo: no
+                se almacena nada en tu dispositivo salvo una preferencia
+                opcional de tema.
+            </li>
+            <li>
+                No vendo, alquilo ni intercambio tu información, y nunca la
+                comparto con fines de marketing.
             </li>
         </ul>
 
-        <h2>What is collected, and why</h2>
+        <h2>Qué se recopila y por qué</h2>
 
-        <h3>Analytics</h3>
+        <h3>Analítica</h3>
         <p>
-            This site uses <strong>no analytics</strong> — no third-party
-            analytics service, no first-party visitor counter, and no tracking
-            script of any kind. Nothing is loaded or stored to measure your
-            visit, and you are not tracked across sites or over time.
+            Este sitio <strong>no utiliza analítica</strong>: no hay un servicio
+            de analítica de terceros, ni un contador de visitantes propio, ni
+            ningún script de seguimiento. No se carga ni almacena nada para
+            medir tu visita, y no se te rastrea entre sitios ni a lo largo del
+            tiempo.
         </p>
 
-        <h3>Server logs (hosting provider)</h3>
+        <h3>Registros del servidor (proveedor de alojamiento)</h3>
         <p>
-            The site is served by a third-party hosting provider. As with
-            essentially every website, the host automatically records standard
-            technical request data — including your IP address, the page
-            requested, and your browser type — to deliver the site reliably and
-            protect it against abuse and attacks. These logs are retained for a
-            short period under the provider’s own policies.
+            El sitio está alojado por un proveedor externo. Como ocurre en
+            prácticamente todos los sitios web, el host registra automáticamente
+            datos técnicos estándar de las solicitudes, incluidos tu dirección
+            IP, la página solicitada y tu tipo de navegador, para ofrecer el
+            sitio de forma fiable y protegerlo frente a abusos y ataques. Estos
+            registros se conservan durante un periodo breve según las políticas
+            del propio proveedor.
         </p>
 
-        <h3>Your theme preference</h3>
+        <h3>Tu preferencia de tema</h3>
         <p>
-            If you switch between light and dark mode, that single choice is
-            saved in your browser’s local storage so the site remembers it on
-            your next visit. It stays on your device, is never sent to me, and
-            is not used to identify you. You can clear it at any time through
-            your browser settings.
+            Si cambias entre el modo claro y oscuro, esa única elección se
+            guarda en el almacenamiento local de tu navegador para que el sitio
+            la recuerde en tu próxima visita. Se queda en tu dispositivo, nunca
+            se envía a mí y no se usa para identificarte. Puedes borrarla en
+            cualquier momento desde la configuración de tu navegador.
         </p>
 
-        <h3>Links to other sites</h3>
+        <h3>Enlaces a otros sitios</h3>
         <p>
-            The site links out to profiles such as Instagram, LinkedIn, and
-            GitHub. Once you follow one of those links you are on a
-            third-party service governed by its own privacy policy, not this
-            one.
+            El sitio enlaza a perfiles como Instagram, LinkedIn y GitHub. Cuando
+            sigues uno de esos enlaces, ya no estás en este sitio, sino en un
+            servicio de terceros gobernado por su propia política de privacidad,
+            no por esta.
         </p>
 
-        <h2>Cookies and similar technologies</h2>
+        <h2>Cookies y tecnologías similares</h2>
         <p>
-            This site uses <strong>no cookies</strong>. The only thing stored on
-            your device is the optional theme preference described above, which
-            is strictly necessary to remember your display choice. Because
-            nothing non-essential is stored on or read from your device, no
-            cookie-consent banner is required under the EU ePrivacy rules or the
-            UK’s PECR. I also honour “Do Not Track” and Global Privacy Control
-            browser signals — though in practice there is nothing to opt out of,
-            because the site does not track you or build a profile of you.
+            Este sitio <strong>no usa cookies</strong>. Lo único que se almacena
+            en tu dispositivo es la preferencia opcional de tema descrita
+            anteriormente, que es estrictamente necesaria para recordar tu
+            elección de visualización. Como no se almacena ni se lee nada no
+            esencial en tu dispositivo, no hace falta un banner de
+            consentimiento de cookies. También respeto las señales de “Do Not
+            Track” y Global Privacy Control del navegador; aunque en la práctica
+            no hay nada que opt-out, porque el sitio no te sigue ni crea un
+            perfil tuyo.
         </p>
 
-        <h2>Legal bases (EU/UK GDPR)</h2>
+        <h2>Base legal (Chile)</h2>
         <p>
-            Where the GDPR or UK GDPR applies, the limited processing above
-            rests on my <strong>legitimate interests</strong> (Article 6(1)(f)):
-            keeping the site secure, available, and free of abuse. This processing is
-            minimal and non-intrusive, no information identifying you is stored,
-            and so no separate consent is required. I do not process any
-            special-category (sensitive) data, and there is no automated
-            decision-making or profiling.
+            En Chile, el tratamiento limitado que se describe arriba se funda en
+            la normativa sobre protección de la vida privada, especialmente la
+            <strong>Ley N° 19.628</strong> sobre Protección de la Vida Privada, así
+            como en la necesidad de mantener el sitio seguro, disponible y libre de
+            abusos. Este tratamiento es mínimo y poco intrusivo, no se almacena información
+            que te identifique y, por ello, no se requiere un consentimiento separado
+            para la finalidad esencial del funcionamiento y la seguridad del sitio.
+            No trato datos sensibles ni realizo decisiones automatizadas ni perfilado.
         </p>
 
-        <h2>Who I share information with</h2>
+        <h2>Con quién comparto la información</h2>
         <p>
-            I do not sell, rent, or trade personal information, and I do not
-            share it for advertising. My hosting provider processes limited
-            technical data (such as request logs) on my behalf, strictly to
-            serve and protect the site. They act as a processor under my
-            instructions. I may disclose information only if I am legally
-            required to do so.
+            No vendo, alquilo ni intercambio información personal, y no la
+            comparto para publicidad. Mi proveedor de alojamiento trata datos
+            técnicos limitados (como registros de solicitudes) en mi nombre,
+            únicamente para servir y proteger el sitio. Actúan como encargado
+            del tratamiento según mis instrucciones. Solo puedo divulgar
+            información si la ley me obliga a hacerlo.
         </p>
 
-        <h2>International data transfers</h2>
+        <h2>Transferencias internacionales de datos</h2>
         <p>
-            This site is reachable worldwide, and the providers above may
-            process data in countries other than your own, including the United
-            States. Where required for visitors in the EU, the UK, or Canada,
-            those transfers rely on appropriate safeguards — such as the
-            providers’ Standard Contractual Clauses and data-processing terms.
+            Este sitio es accesible en todo el mundo, y los proveedores antes
+            mencionados pueden tratar datos en países distintos al tuyo, según
+            la infraestructura de alojamiento y servicios que utilicen. Cuando
+            exista transferencia internacional de datos, se hará conforme a las
+            medidas de protección adecuadas establecidas por la normativa
+            aplicable y por los términos del proveedor.
         </p>
 
-        <h2>How long data is kept</h2>
+        <h2>Durante cuánto tiempo se conservan los datos</h2>
         <p>
-            I keep no personal data about you myself. My hosting provider’s
-            technical logs are retained for the short periods set out in its own
-            policy.
+            Yo no conservo datos personales tuyos. Los registros técnicos de mi
+            proveedor de alojamiento se conservan durante los periodos breves
+            que establece su propia política.
         </p>
 
-        <h2>Your rights</h2>
+        <h2>Tus derechos</h2>
         <p>
-            Your rights depend on where you live. Because this site does not
-            store information that identifies you, I often will not be able to
-            connect a request to any specific data about you — but you are
-            welcome to exercise any of the rights below.
+            Como este sitio no almacena información que te identifique, a menudo
+            no podré relacionar una solicitud con datos concretos sobre ti. Sin
+            embargo, si deseas ejercer tus derechos, puedes hacerlo de la forma
+            que se indica a continuación.
         </p>
 
-        <h3>European Union &amp; United Kingdom</h3>
+        <h3>Chile</h3>
         <p>
-            Under the GDPR and UK GDPR you have the right to access, rectify,
-            erase, restrict, or object to the processing of your personal data
-            (including objecting to legitimate-interest processing), and the
-            right to data portability. You will not be subject to automated
-            decision-making. You may also lodge a complaint with your local
-            supervisory authority — in the UK, the Information Commissioner’s
-            Office (<a
-                href="https://ico.org.uk"
-                target="_blank"
-                rel="noopener noreferrer">ico.org.uk</a
-            >).
-        </p>
-
-        <h3>United States (including California)</h3>
-        <p>
-            Where US state privacy laws such as California’s CCPA/CPRA apply, you
-            have the right to know, access, delete, and correct personal
-            information, and to opt out of its sale or sharing. I do
-            <strong>not</strong> sell or share personal information, have not done
-            so, and do not use it for targeted advertising. I will never discriminate
-            against you for exercising a privacy right.
-        </p>
-
-        <h3>Canada</h3>
-        <p>
-            Under PIPEDA and Québec’s Law 25 you have the right to access the
-            personal information held about you, to request corrections, and to
-            withdraw consent. You may complain to the Office of the Privacy
-            Commissioner of Canada (<a
-                href="https://www.priv.gc.ca"
-                target="_blank"
-                rel="noopener noreferrer">priv.gc.ca</a
-            >) or, in Québec, to the Commission d’accès à l’information.
+            En Chile, conforme a la Ley N° 19.628 sobre Protección de la Vida
+            Privada, tienes derecho a ejercer los derechos de acceso,
+            rectificación, cancelación y oposición respecto de tus datos
+            personales (conocidos como derechos ARCO). También puedes solicitar
+            información sobre cómo se tratan tus datos, reclamar por un uso
+            indebido y, si corresponde, presentar una queja ante la autoridad
+            competente. En Chile, la autoridad de supervisión relevante es la
+            <strong>Agencia de Protección de Datos Personales</strong>.
         </p>
 
         <p>
-            To exercise any of these rights, get in touch through the <a
+            Para ejercer cualquiera de estos derechos, ponte en contacto a
+            través de la <a class="text-link" href="/contact"
+                >página de contacto</a
+            >. Responderé dentro del plazo que exija la normativa aplicable.
+        </p>
+
+        <h2>Privacidad de los menores</h2>
+        <p>
+            Este sitio no está dirigido a menores y no recopilo de forma
+            consciente información personal de menores. Si crees que un menor ha
+            facilitado información personal, por favor contacta conmigo y lo
+            trataré.
+        </p>
+
+        <h2>Seguridad</h2>
+        <p>
+            El sitio es totalmente estático y se sirve solo mediante HTTPS, con
+            HSTS (HTTP Strict Transport Security), una Política de Seguridad de
+            Contenido estricta y cabeceras de seguridad estándar. No existe una
+            base de datos de información personal que pueda verse comprometida.
+        </p>
+
+        <h2>Cambios en esta política</h2>
+        <p>
+            Puedo actualizar esta política de vez en cuando. Cualquier cambio
+            importante se reflejará en la fecha de “Última actualización” que
+            aparece arriba. El uso continuado del sitio después de un cambio
+            implica que aceptas la política revisada.
+        </p>
+
+        <h2>Contacto</h2>
+        <p>
+            ¿Preguntas sobre privacidad o una solicitud sobre tus datos? Ponte
+            en contacto conmigo a través de la <a
                 class="text-link"
-                href="/contact">contact page</a
-            >. I will respond within the time required by the law that applies to
-            you.
-        </p>
-
-        <h2>Children’s privacy</h2>
-        <p>
-            This site is not directed to children and I do not knowingly collect
-            personal information from children (under 13 in the United States, or
-            the equivalent age — up to 16 — in parts of the EU). If you believe a
-            child has provided personal information, please contact me and I will
-            address it.
-        </p>
-
-        <h2>Security</h2>
-        <p>
-            The site is fully static and served only over HTTPS, with HTTP Strict
-            Transport Security, a strict Content-Security-Policy, and standard
-            security headers. There is no database of personal information to be
-            breached.
-        </p>
-
-        <h2>Changes to this policy</h2>
-        <p>
-            I may update this policy from time to time. Any material change will
-            be reflected in the “Last updated” date above. Continued use of the
-            site after a change means you accept the revised policy.
-        </p>
-
-        <h2>Contact</h2>
-        <p>
-            Questions about privacy, or a request about your data? Please reach
-            me through the <a class="text-link" href="/contact">contact page</a
+                href="/contact">página de contacto</a
             >.
         </p>
     </article>

@@ -17,7 +17,7 @@ export const site = {
   nameZh: '',
   title: 'David Astudillo',
   description:
-    'A minimal photography portfolio — digital and film galleries (looking ahead).',
+    'Un portafolio fotográfico minimalista — galerías digitales y analógicas.',
 };
 
 // Left-hand navigation. "Digital" is the home page and shows by default.
