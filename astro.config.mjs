@@ -1,15 +1,10 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import mdx from '@astrojs/mdx';
-import { unified } from '@astrojs/markdown-remark';
 
 // https://astro.build/config
 export default defineConfig({
-  // MDX powers the blogs: Markdown + components, so posts can drop in
-  // gallery-style <Photo> / <Gallery> blocks. Generate sitemap-index.xml +
-  // sitemap-0.xml (referenced from robots.txt).
+  // Generate sitemap-index.xml + sitemap-0.xml (referenced from robots.txt).
   integrations: [
-    mdx(),
     sitemap({
       filter: (page) => !page.endsWith('/robots.txt') && !page.endsWith('/llms.txt'),
     }),
@@ -33,19 +28,6 @@ export default defineConfig({
   // "and aPhoto Blog", and "on <a>Instagram</a>" as "onInstagram". Pinning
   // `true` keeps the exact rendered spacing the template shipped with.
   compressHTML: true,
-
-  // Markdown for the blogs. Prism highlights code with CSS *classes* (themed in
-  // global.css) rather than inline styles, so syntax colors work under the strict
-  // CSP without needing 'unsafe-inline' for styles.
-  markdown: {
-    syntaxHighlight: 'prism',
-    // Emit GFM table column alignment as `align` attributes rather than inline
-    // `style="text-align:…"`, so tables stay within the strict CSP (no
-    // style-src 'unsafe-inline'). Styled in global.css. Configured on the
-    // `unified()` processor directly — the older `markdown.remarkRehype`
-    // shortcut was deprecated ahead of Astro 7, so this is the supported form.
-    processor: unified({ remarkRehype: { tableCellAlignToStyle: false } }),
-  },
 
   // Fully static output — deploy the generated dist/ to any static host.
   // Images are optimized at build time with sharp.

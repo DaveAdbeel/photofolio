@@ -5,6 +5,12 @@ import { social } from "../config";
 
 const links = [
     {
+        name: "whatsapp" as const,
+        label: "WhatsApp",
+        handle: "Haz tu consulta, no muerdo",
+        href: social.whatsapp,
+    },
+    {
         name: "instagram" as const,
         label: "Instagram",
         handle: "@daichho",
@@ -30,8 +36,8 @@ const links = [
     description="Formas de seguir mi trabajo y ponerme en contacto."
 >
     <article class="page prose">
-        <h1 class="page__title">¿Quieres hablar conmigo?</h1>
-        <p class="lede">La mejor manera de seguir la conversación:</p>
+        <h1 class="page__title">¿Buscas fotógrafo?</h1>
+        <p class="lede">Escríbeme y cuéntame sobre tu proyecto.</p>
 
         <ul class="contact-list">
             {

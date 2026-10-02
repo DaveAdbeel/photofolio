@@ -28,11 +28,11 @@ export const nav: NavItem[] = [
   { label: 'Licencia', href: '/license' },
 ];
 
-// Social / external links shown in the sidebar and on the contact page. Replace
-// the placeholders with your own. If you drop or add one, also update the
-// matching <Icon> in Sidebar.astro and the list in Contact.astro.
+// Social and contact links. Set the WhatsApp URL to your number in international
+// format, without the leading + sign.
 export const social = {
   instagram: 'https://www.instagram.com/daichho',
   linkedin: 'https://www.linkedin.com/in/david-astudillo-599ba9220/',
   github: 'https://github.com/daveadbeel',
+  whatsapp: 'https://wa.me/REEMPLAZA_CON_TU_NUMERO',
 };

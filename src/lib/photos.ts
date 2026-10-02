@@ -14,29 +14,10 @@ const WIDTHS = [640, 960, 1280, 1600, 2048, 2880, 3840, 5120];
 export const GRID_SIZES =
   '(min-width: 1350px) calc((100vw - 300px - 96px - 2 * var(--gap)) / 3), (min-width: 760px) calc((100vw - 40px - var(--gap)) / 2), calc(100vw - 40px)';
 
-// Blog posts render photos through the same pipeline as the galleries, but the
-// content sits in a readable ~64ch column rather than the full-width gallery.
-//   POST_SIZES       — a single in-post <Photo> spans the whole column (~680px).
-//   POST_GRID_SIZES  — a <Gallery> is two columns within that same width.
-export const POST_SIZES = '(min-width: 1024px) 680px, calc(100vw - 40px)';
-export const POST_GRID_SIZES =
-  '(min-width: 1024px) 332px, (min-width: 641px) calc(50vw - 40px), calc(100vw - 40px)';
-
 export interface RenderedPhoto {
   src: string;
   srcset: string;
   full: string;
-}
-
-// Turn a filename into a readable caption: "01-snowy-harbor.jpg" -> "Snowy harbor".
-// Shared by the blog <Photo>/<Gallery> components (the galleries inline their own
-// copy). Strips a leading order prefix and the extension.
-export function captionFromFilename(name: string, fallbackIndex = 0): string {
-  const baseName = name.split('/').pop() ?? name;
-  const stem = baseName.replace(/\.[^.]+$/, '');
-  const words = stem.replace(/^[\s\d_-]+/, '').replace(/[-_]+/g, ' ').trim();
-  if (!words) return `Photograph ${fallbackIndex + 1}`;
-  return words.charAt(0).toUpperCase() + words.slice(1);
 }
 
 // Build a responsive WebP srcset from explicit per-width renditions, so no image

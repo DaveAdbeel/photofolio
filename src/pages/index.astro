@@ -1,9 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import PhotoGrid from '../components/PhotoGrid.astro';
+import Layout from "../layouts/Layout.astro";
+import PhotoGrid from "../components/PhotoGrid.astro";
 ---
 
 <Layout>
   <h1 class="gallery-label">Digital</h1>
   <PhotoGrid collection="digital" />
+  <section class="gallery-cta" aria-labelledby="gallery-cta-title">
+    <div class="gallery-cta__copy">
+      <h2 id="gallery-cta-title">¿Tienes un proyecto en mente?</h2>
+      <p>Hablemos de cómo contar tu historia a través de la fotografía.</p>
+    </div>
+    <a class="gallery-cta__link" href="/contact">
+      Contáctame <span aria-hidden="true">→</span>
+    </a>
+  </section>
 </Layout>
