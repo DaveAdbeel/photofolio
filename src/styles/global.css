@@ -401,6 +401,28 @@ a {
   padding-bottom: 0.5rem;
 }
 
+.calendar-grid--scroll-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-count: initial;
+  column-gap: 0;
+  gap: calc(var(--gap) * 1.2);
+  align-items: start;
+}
+
+.calendar-column {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: calc(var(--gap) + 0.4rem);
+  transform: translate3d(0, var(--column-shift, 0px), 0);
+  will-change: transform;
+}
+
+.calendar-grid--scroll-columns .calendar-item {
+  margin-bottom: 0;
+}
+
 .calendar-item {
   position: relative;
   display: inline-block;
@@ -408,28 +430,13 @@ a {
   margin: 0 0 calc(var(--gap) + 0.4rem);
   break-inside: avoid;
   page-break-inside: avoid;
-  transition: transform 0.25s ease;
 }
 
 .calendar-item .photo-tile {
   display: block;
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 10px 22px rgba(17, 17, 17, 0.08);
-}
-
-.calendar-item:nth-child(4n + 1),
-.calendar-item:nth-child(4n + 4) {
-  transform: translateY(1.1rem);
-}
-
-.calendar-item:nth-child(4n + 2),
-.calendar-item:nth-child(4n + 3) {
-  transform: translateY(-0.6rem);
-}
-
-.calendar-item:hover {
-  transform: translateY(-0.15rem);
+  box-shadow: none;
 }
 
 .calendar-caption {
@@ -445,11 +452,9 @@ a {
     column-gap: var(--gap);
   }
 
-  .calendar-item:nth-child(4n + 1),
-  .calendar-item:nth-child(4n + 4),
-  .calendar-item:nth-child(4n + 2),
-  .calendar-item:nth-child(4n + 3) {
-    transform: none;
+  .calendar-grid--scroll-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap);
   }
 }
 
@@ -458,8 +463,8 @@ a {
     column-count: 1;
   }
 
-  .calendar-item .photo-tile {
-    border-radius: 10px;
+  .calendar-grid--scroll-columns {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -477,6 +482,12 @@ a {
 
 .lightbox.is-open {
   display: flex;
+  animation: lightbox-fade-in 180ms ease-out both;
+}
+
+.lightbox.is-closing {
+  pointer-events: none;
+  animation: lightbox-fade-out 180ms ease-in both;
 }
 
 .lightbox__figure {
@@ -486,6 +497,43 @@ a {
   align-items: center;
   max-width: 100%;
   max-height: 100%;
+  animation: lightbox-photo-in 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.lightbox.is-closing .lightbox__figure {
+  animation: lightbox-photo-out 160ms ease-in both;
+}
+
+@keyframes lightbox-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes lightbox-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes lightbox-photo-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes lightbox-photo-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+  }
 }
 
 .lightbox__img {
