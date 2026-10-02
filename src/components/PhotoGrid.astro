@@ -103,6 +103,8 @@ const photos = await Promise.all(
       caption,
       alt: caption || captionFor(path, i),
       entry,
+      width: mod.default.width,
+      height: mod.default.height,
       ratio: mod.default.height / mod.default.width,
     };
   }),
@@ -165,6 +167,8 @@ const jsonLd = {
               src={photo.src}
               srcset={photo.srcset}
               sizes={GRID_SIZES}
+              width={photo.width}
+              height={photo.height}
               alt={photo.alt}
               loading={i < 4 ? "eager" : "lazy"}
               decoding="async"
