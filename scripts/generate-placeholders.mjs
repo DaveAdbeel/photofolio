@@ -20,17 +20,18 @@ import { dirname, join } from 'node:path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ASSETS = join(__dirname, '..', 'src', 'assets');
 
-// Read the site name from src/config.ts (no TS import needed) so the share image
-// stays in sync with your config. Re-run `npm run gen:placeholders` after a name
-// change to refresh public/og.jpg.
-async function readSiteName() {
+// Read the site identity from src/config.ts (no TS import needed) so the share
+// image stays in sync with your config. Re-run `npm run gen:placeholders -- --og-only`
+// after changing it to refresh public/og.jpg.
+async function readSiteInfo() {
   try {
     const cfg = await readFile(join(__dirname, '..', 'src', 'config.ts'), 'utf8');
     const name = cfg.match(/name:\s*'([^']*)'/)?.[1] || 'Your Name';
     const nameZh = cfg.match(/nameZh:\s*'([^']*)'/)?.[1] || '';
-    return { name, nameZh };
+    const description = cfg.match(/description:\s*'([^']*)'/)?.[1] || '';
+    return { name, nameZh, description };
   } catch {
-    return { name: 'Your Name', nameZh: '' };
+    return { name: 'Your Name', nameZh: '', description: '' };
   }
 }
 
@@ -174,53 +175,56 @@ async function buildBlog() {
   }
 }
 
-// Social-share / Open Graph image (1200×630) for rich link previews. The name is
-// read from src/config.ts; if you set a second-script name (site.nameZh) it's
-// centered under the main name with flanking rules.
+// Social-share / Open Graph image (1200×630) for rich link previews. The profile
+// photo and identity are read from public/profile.jpg and src/config.ts.
 async function buildOgImage() {
   const PUBLIC = join(__dirname, '..', 'public');
-  await mkdir(PUBLIC, { recursive: true });
-  const SEAL_RED = '#d03930'; // matches the seal logo's ink color
-  const { name, nameZh } = await readSiteName();
+  const { name, nameZh, description } = await readSiteInfo();
   const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-
-  const trimmedWidth = async (svg) => {
-    const { info } = await sharp(Buffer.from(svg)).trim({ threshold: 10 }).toBuffer({ resolveWithObject: true });
-    return info.width;
-  };
-  const enFont = 'DejaVu Serif, Georgia, serif';
-  const zhFont = 'Noto Serif CJK SC, Songti SC, serif';
-  const probe = (t, ff, fs) =>
-    `<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="240"><rect width="1800" height="240" fill="#fff"/><text x="20" y="160" font-family="${ff}" font-size="${fs}" fill="#000">${esc(t)}</text></svg>`;
-  const SEAL_H = 300;
-  const F = 34;
-  const cx = 600;
-
-  let text;
-  if (nameZh) {
-    // Two lines: the main name sets the width; rules flank the second-script name.
-    const wEn = await trimmedWidth(probe(name, enFont, F));
-    const wZh = await trimmedWidth(probe(nameZh, zhFont, F));
-    const enY = 460, zhY = 506, ruleY = 494, gap = 14;
-    text = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
-      <text x="${cx}" y="${enY}" text-anchor="middle" font-family="${enFont}" font-size="${F}" fill="${SEAL_RED}">${esc(name)}</text>
-      <line x1="${(cx - wEn / 2).toFixed(1)}" y1="${ruleY}" x2="${(cx - wZh / 2 - gap).toFixed(1)}" y2="${ruleY}" stroke="${SEAL_RED}" stroke-width="2"/>
-      <text x="${cx}" y="${zhY}" text-anchor="middle" font-family="${zhFont}" font-size="${F}" fill="${SEAL_RED}">${esc(nameZh)}</text>
-      <line x1="${(cx + wZh / 2 + gap).toFixed(1)}" y1="${ruleY}" x2="${(cx + wEn / 2).toFixed(1)}" y2="${ruleY}" stroke="${SEAL_RED}" stroke-width="2"/>
-    </svg>`;
-  } else {
-    // Single centered name.
-    text = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
-      <text x="${cx}" y="488" text-anchor="middle" font-family="${enFont}" font-size="${F}" fill="${SEAL_RED}">${esc(name)}</text>
-    </svg>`;
+  const RED = '#a8281f';
+  const lines = [];
+  let line = '';
+  for (const word of description.split(/\s+/).filter(Boolean)) {
+    const next = line ? `${line} ${word}` : word;
+    if (next.length > 40 && line) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = next;
+    }
   }
-
-  const illu = await sharp(join(__dirname, '..', 'src', 'assets', 'seal.png')).resize({ height: SEAL_H }).png().toBuffer();
-  const im = await sharp(illu).metadata();
+  if (line) lines.push(line);
+  const descriptionSvg = lines.slice(0, 2).map((text, i) =>
+    `<text x="560" y="344" dy="${i * 38}" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" fill="#5b514d">${esc(text)}</text>`,
+  ).join('');
+  const nameSvg = nameZh
+    ? `<text x="560" y="279" font-family="DejaVu Serif, Georgia, serif" font-size="61" fill="#292321">${esc(name)}</text><text x="562" y="414" font-family="Noto Serif CJK SC, Songti SC, serif" font-size="27" fill="${RED}">${esc(nameZh)}</text>`
+    : `<text x="560" y="286" font-family="DejaVu Serif, Georgia, serif" font-size="64" fill="#292321">${esc(name)}</text>`;
+  const artwork = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+    <rect width="1200" height="630" fill="#fcfcfb"/>
+    <rect x="0" y="0" width="16" height="630" fill="${RED}"/>
+    <circle cx="300" cy="315" r="190" fill="#ffffff" stroke="#eadbd8" stroke-width="2"/>
+    <line x1="560" y1="170" x2="560" y2="460" stroke="#d9c7c2" stroke-width="2"/>
+    <text x="560" y="211" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" letter-spacing="2" fill="${RED}">PORTAFOLIO FOTOGRÁFICO</text>
+    ${nameSvg}
+    ${descriptionSvg}
+    <line x1="560" y1="466" x2="1090" y2="466" stroke="#e4d9d5" stroke-width="2"/>
+    <text x="560" y="511" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#746762">daveadbeel.github.io/photofolio</text>
+  </svg>`);
+  const profilePath = join(PUBLIC, 'profile.jpg');
+  const avatarSize = 360;
+  const avatar = await sharp(profilePath)
+    .resize(avatarSize, avatarSize, { fit: 'cover', position: 'attention' })
+    .composite([{
+      input: Buffer.from(`<svg width="${avatarSize}" height="${avatarSize}"><circle cx="${avatarSize / 2}" cy="${avatarSize / 2}" r="${avatarSize / 2}" fill="#fff"/></svg>`),
+      blend: 'dest-in',
+    }])
+    .png()
+    .toBuffer();
   await sharp({ create: { width: 1200, height: 630, channels: 3, background: '#fcfcfb' } })
     .composite([
-      { input: illu, top: 118, left: Math.round(600 - im.width / 2) },
-      { input: Buffer.from(text), top: 0, left: 0 },
+      { input: artwork, top: 0, left: 0 },
+      { input: avatar, top: 135, left: 120 },
     ])
     .jpeg({ quality: 90 })
     .toFile(join(PUBLIC, 'og.jpg'));
