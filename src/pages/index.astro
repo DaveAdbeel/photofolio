@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PhotoGrid from "../components/PhotoGrid.astro";
+import { withBase } from "../config";
 ---
 
 <Layout>
@@ -11,7 +12,7 @@ import PhotoGrid from "../components/PhotoGrid.astro";
       <h2 id="gallery-cta-title">¿Tienes un proyecto en mente?</h2>
       <p>Hablemos de cómo contar tu historia a través de la fotografía.</p>
     </div>
-    <a class="gallery-cta__link" href="/contact">
+    <a class="gallery-cta__link" href={withBase("/contact")}>
       Contáctame <span aria-hidden="true">→</span>
     </a>
   </section>

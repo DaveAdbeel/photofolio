@@ -1,11 +1,12 @@
 import type { APIRoute } from 'astro';
-import { site as siteInfo, social } from '../config';
+import { site as siteInfo, social, withBase } from '../config';
 
 // llms.txt — a curated, Markdown index that points AI tools at the most useful
 // pages. (Curation, not access control — the crawler stance lives in robots.txt.)
 // Spec: https://llmstxt.org/
 export const GET: APIRoute = ({ site }) => {
-  const url = (path: string) => (site ? new URL(path, site).href : path);
+  const url = (path: string) =>
+    site ? new URL(withBase(path), site).href : withBase(path);
 
   const body = `# ${siteInfo.name}
 

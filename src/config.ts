@@ -20,6 +20,9 @@ export const site = {
     'Un portafolio fotográfico minimalista — galerías digitales y analógicas.',
 };
 
+export const withBase = (path: string) =>
+  `${import.meta.env.BASE_URL}/${path.replace(/^\/+/, '')}`;
+
 // Left-hand navigation. "Digital" is the home page and shows by default.
 export const nav: NavItem[] = [
   { label: 'Mi galeria', href: '/' },

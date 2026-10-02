@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { site, social } from "../config";
+import { site, withBase } from "../config";
 
 // ── Edit everything below to tell your own story. ───────────────────────────
 // The little "fact" cards are just example fields — rename them, add more, or
@@ -56,7 +56,11 @@ const facts = [
         </div>
 
         <p>
-            <a class="text-link" href="/contact" rel="noopener noreferrer">
+            <a
+                class="text-link"
+                href={withBase("/contact")}
+                rel="noopener noreferrer"
+            >
                 Quieres hablar? →
             </a>
         </p>

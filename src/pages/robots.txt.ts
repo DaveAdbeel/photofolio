@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { withBase } from '../config';
 
 // Crawler stance: the site IS discoverable by search engines and AI *search /
 // citation* crawlers (which drive referral traffic), but AI *training* / bulk
@@ -40,7 +41,9 @@ const BLOCK = [
 ];
 
 export const GET: APIRoute = ({ site }) => {
-  const sitemap = site ? new URL('sitemap-index.xml', site).href : '/sitemap-index.xml';
+  const sitemap = site
+    ? new URL(withBase('sitemap-index.xml'), site).href
+    : withBase('sitemap-index.xml');
 
   const lines = [
     '# Search engines and AI search/citation crawlers are welcome.',

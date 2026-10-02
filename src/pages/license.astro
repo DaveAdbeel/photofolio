@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { site, social } from "../config";
+import { site, social, withBase } from "../config";
 ---
 
 <Layout
@@ -43,7 +43,9 @@ import { site, social } from "../config";
             > o
             <a href={social.linkedin} target="_blank" rel="noopener noreferrer"
                 >LinkedIn</a
-            >, o a través de la <a href="/contact">página de contacto</a>.
+            >, o a través de la <a href={withBase("/contact")}
+                >página de contacto</a
+            >.
         </p>
     </article>
 </Layout>

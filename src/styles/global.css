@@ -161,7 +161,10 @@ a {
 
 .brand__mark {
   width: 80px;
-  height: auto;
+  aspect-ratio: 1;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 0.25rem;
 }
 
@@ -1117,6 +1120,7 @@ a {
     grid-area: tree;
     justify-self: center;
     width: 60px;
+    height: 60px;
     margin-bottom: 0;
     position: relative;
     z-index: 31;
@@ -1228,17 +1232,6 @@ a {
   --muted: #8f8a76; /* readable Monokai comment tone */
   --line: #3e3d32; /* Monokai UI line */
   --brand: #b0ba9c; /* matches the dark tree's lighter green */
-}
-
-/* Logo: show the variant matching the active theme. */
-.brand__mark--dark {
-  display: none;
-}
-:root[data-theme='dark'] .brand__mark--light {
-  display: none;
-}
-:root[data-theme='dark'] .brand__mark--dark {
-  display: block;
 }
 
 /* Theme toggle button (sun/moon icon in the socials row). */

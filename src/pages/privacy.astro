@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { site } from "../config";
+import { site, withBase } from "../config";
 
 // Date this policy text last changed (not the build date). Edit when you revise
 // the wording so the "Last updated" line below stays meaningful.
@@ -42,7 +42,9 @@ const lastUpdated = "1 de enero de 2026";
             personales, soy el responsable del tratamiento de la información que
             se procese en el marco de este sitio. Puedes contactarme a través de
             la
-            <a class="text-link" href="/contact">página de contacto</a>.
+            <a class="text-link" href={withBase("/contact")}
+                >página de contacto</a
+            >.
         </p>
 
         <h2>Versión breve</h2>
@@ -181,7 +183,7 @@ const lastUpdated = "1 de enero de 2026";
 
         <p>
             Para ejercer cualquiera de estos derechos, ponte en contacto a
-            través de la <a class="text-link" href="/contact"
+            través de la <a class="text-link" href={withBase("/contact")}
                 >página de contacto</a
             >. Responderé dentro del plazo que exija la normativa aplicable.
         </p>
@@ -215,7 +217,7 @@ const lastUpdated = "1 de enero de 2026";
             ¿Preguntas sobre privacidad o una solicitud sobre tus datos? Ponte
             en contacto conmigo a través de la <a
                 class="text-link"
-                href="/contact">página de contacto</a
+                href={withBase("/contact")}>página de contacto</a
             >.
         </p>
     </article>

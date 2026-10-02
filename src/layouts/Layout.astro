@@ -18,7 +18,7 @@ import cormorantDisplay from "@fontsource/cormorant-garamond/files/cormorant-gar
 
 import Sidebar from "../components/Sidebar.astro";
 import BaseSchema from "../components/BaseSchema.astro";
-import { site } from "../config";
+import { site, withBase } from "../config";
 
 interface Props {
   title?: string;
@@ -27,10 +27,18 @@ interface Props {
 
 const { title, description = site.description } = Astro.props;
 const pageTitle = title ? `${title} — ${site.name}` : site.title;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const pathname = Astro.url.pathname;
+const routePath =
+  basePath && (pathname === basePath || pathname.startsWith(`${basePath}/`))
+    ? pathname.slice(basePath.length) || "/"
+    : pathname;
 const canonical = Astro.site
-  ? new URL(Astro.url.pathname, Astro.site).href
+  ? new URL(withBase(routePath), Astro.site).href
   : undefined;
-const ogImage = Astro.site ? new URL("/og.jpg", Astro.site).href : "/og.jpg";
+const ogImage = Astro.site
+  ? new URL(withBase("/og.jpg"), Astro.site).href
+  : withBase("/og.jpg");
 // Footer copyright year (fixed at build time — a rebuild refreshes it).
 const year = new Date().getFullYear();
 ---
@@ -87,15 +95,20 @@ const year = new Date().getFullYear();
         display: none;
       }
     </style>
-    <link rel="icon" href="/favicon.png" type="image/png" sizes="256x256" />
     <link
       rel="icon"
-      href="/favicon-dark.png"
+      href={withBase("/favicon.png")}
+      type="image/png"
+      sizes="256x256"
+    />
+    <link
+      rel="icon"
+      href={withBase("/favicon-dark.png")}
       type="image/png"
       sizes="256x256"
       media="(prefers-color-scheme: dark)"
     />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href={withBase("/apple-touch-icon.png")} />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <meta name="author" content={site.name} />
@@ -127,8 +140,9 @@ const year = new Date().getFullYear();
       <footer class="site-footer">
         <p class="site-footer__line">
           <span>© {year} {site.name}</span>
-          <a class="site-footer__link" href="/privacy">Privacidad</a>
-          <a class="site-footer__link" href="/license">Licencia</a>
+          <a class="site-footer__link" href={withBase("/privacy")}>Privacidad</a
+          >
+          <a class="site-footer__link" href={withBase("/license")}>Licencia</a>
         </p>
       </footer>
     </main>

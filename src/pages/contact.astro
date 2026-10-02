@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Icon from "../components/Icon.astro";
-import { social } from "../config";
+import { social, withBase } from "../config";
 
 const links = [
     {
@@ -73,11 +73,14 @@ const links = [
         </ul>
 
         <p>
-            <a class="text-link" href="/license">Uso de imágenes y licencia →</a
+            <a class="text-link" href={withBase("/license")}
+                >Uso de imágenes y licencia →</a
             >
         </p>
         <p>
-            <a class="text-link" href="/privacy">Políticas de privacidad →</a>
+            <a class="text-link" href={withBase("/privacy")}
+                >Políticas de privacidad →</a
+            >
         </p>
     </article>
 </Layout>

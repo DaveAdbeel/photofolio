@@ -1,13 +1,19 @@
 ---
 import Logo from "./Logo.astro";
 import Icon from "./Icon.astro";
-import { site, nav, social } from "../config";
+import { site, nav, social, withBase } from "../config";
 
 // Normalise the current path (strip trailing slash) for active-link matching.
 // A link is active on its own page and on any page beneath it (e.g. "Tech Blog"
 // stays active while reading a post), but "/" only matches the home page.
 const norm = (p: string) => p.replace(/\/+$/, "") || "/";
-const current = norm(Astro.url.pathname);
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const pathname = Astro.url.pathname;
+const routePath =
+  basePath && (pathname === basePath || pathname.startsWith(`${basePath}/`))
+    ? pathname.slice(basePath.length) || "/"
+    : pathname;
+const current = norm(routePath);
 const isActive = (href: string) => {
   const h = norm(href);
   return h === current || (h !== "/" && current.startsWith(h + "/"));
@@ -16,7 +22,7 @@ const isActive = (href: string) => {
 
 <header class="sidebar">
   <div class="sidebar__inner">
-    <a class="brand" href="/" aria-label={`${site.name} — home`}>
+    <a class="brand" href={withBase("/")} aria-label={`${site.name} — home`}>
       <Logo class="brand__mark" />
       <span class="brand__names">
         <span class="brand__name">{site.name}</span>
@@ -60,6 +66,15 @@ const isActive = (href: string) => {
       >
         <Icon name="github" />
       </a>
+      <a
+        class="socials__link"
+        href={social.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp"
+      >
+        <Icon name="whatsapp" />
+      </a>
       <button
         class="socials__link theme-toggle"
         type="button"
@@ -87,7 +102,7 @@ const isActive = (href: string) => {
           nav.map((item) => (
             <li>
               <a
-                href={item.href}
+                href={withBase(item.href)}
                 class:list={["nav__link", { "is-active": isActive(item.href) }]}
                 aria-current={isActive(item.href) ? "page" : undefined}
               >
