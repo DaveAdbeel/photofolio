@@ -6,43 +6,41 @@ import { site, social } from "../config";
 // The little "fact" cards are just example fields — rename them, add more, or
 // remove the whole block if you prefer plain prose.
 const facts = [
-    { label: "Currently", line: "Photographer & writer", muted: "Your City, Country" },
-    { label: "Shooting", line: "Digital & 35mm film", muted: "Landscapes, travel, the everyday" },
-    { label: "Since", line: "20XX", muted: "Always learning" },
+    {
+        label: "Actualmente",
+        line: "Fotógrafo y programador",
+        muted: "Santiago, Chile",
+    },
+    {
+        label: "Fotografio",
+        line: "Solo Digital (por ahora)",
+        muted: "Me guio por mi instinto",
+    },
+    { label: "Desde", line: "2024", muted: "No me canso de hacer esto" },
 ];
 ---
 
 <Layout
     title="About"
-    description={`About ${site.name} — photographer and writer.`}
+    description={`Desde ${site.name} — fotógrafo y programador.`}
 >
     <article class="page prose">
-        <h1 class="page__title">About</h1>
+        <h1 class="page__title">Para mi</h1>
 
         <p class="lede">
-            I'm {site.name} — a photographer and writer, and the person behind
-            the pictures on this site.
+            Soy {site.name} — un fotógrafo y programador, y la persona detras de las
+            fotos en este sitio.
         </p>
 
         <p>
-            This is placeholder copy from the template. Write a few short
-            paragraphs about yourself here: where you're based, what draws you to
-            photography, the cameras or film you like, and what you tend to point
-            a lens at. Keep it personal and brief — a paragraph or three is
-            plenty.
+            La fotografia para mi es una forma de canalizar lo que veo e
+            inmortalizar esos momentos, un lenguaje que no necesita palabras.
         </p>
-
         <p>
-            Photography is how I slow down and pay attention — to light, weather,
-            and the quiet shape of a place. The galleries here gather what I've
-            seen along the way.
-        </p>
-
-        <p>
-            I write here, too: a <a href="/blog/tech">Tech Blog</a> for notes on
-            tools and building for the web, and a
-            <a href="/blog/photography">Photo Blog</a> of field notes on light,
-            places, and the craft of photography.
+            Puede no parecer importante al momento de tomar una foto, recuerdo
+            un tiempo llegue a pensar asi, creia que no era necesaria la
+            fotografia — Para el niño que pensaba asi, quiero que sienta lo
+            mismo que yo cuando tomo las fotos.
         </p>
 
         <div class="facts">
@@ -58,13 +56,8 @@ const facts = [
         </div>
 
         <p>
-            <a
-                class="text-link"
-                href={social.github}
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Find me elsewhere →
+            <a class="text-link" href="/contact" rel="noopener noreferrer">
+                Quieres hablar? →
             </a>
         </p>
     </article>
