@@ -184,13 +184,13 @@ const jsonLd = {
 
 <script is:inline>
   (() => {
-    const grid = document.querySelector('.calendar-grid');
+    const grid = document.querySelector(".calendar-grid");
     if (!grid) return;
 
-    const photos = [...grid.querySelectorAll('.calendar-item')];
+    const photos = [...grid.querySelectorAll(".calendar-item")];
     if (!photos.length) return;
 
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let columns = [];
     let frame = 0;
 
@@ -200,8 +200,8 @@ const jsonLd = {
     const arrangeColumns = () => {
       const count = columnCount();
       columns = Array.from({ length: count }, () => {
-        const column = document.createElement('div');
-        column.className = 'calendar-column';
+        const column = document.createElement("div");
+        column.className = "calendar-column";
         return column;
       });
       const heights = columns.map(() => 0);
@@ -214,7 +214,7 @@ const jsonLd = {
       });
 
       grid.replaceChildren(...columns);
-      grid.classList.add('calendar-grid--scroll-columns');
+      grid.classList.add("calendar-grid--scroll-columns");
       updateColumnMotion();
     };
 
@@ -234,7 +234,7 @@ const jsonLd = {
         : Math.sin(progress * Math.PI) * amplitude;
       columns.forEach((column, index) => {
         const direction = index % 2 === 0 ? -1 : 1;
-        column.style.setProperty('--column-shift', `${distance * direction}px`);
+        column.style.setProperty("--column-shift", `${distance * direction}px`);
       });
     };
 
@@ -244,9 +244,9 @@ const jsonLd = {
     };
 
     arrangeColumns();
-    window.addEventListener('scroll', scheduleMotion, { passive: true });
-    window.addEventListener('resize', arrangeColumns);
-    reducedMotion.addEventListener('change', scheduleMotion);
+    window.addEventListener("scroll", scheduleMotion, { passive: true });
+    window.addEventListener("resize", arrangeColumns);
+    reducedMotion.addEventListener("change", scheduleMotion);
   })();
 </script>
 

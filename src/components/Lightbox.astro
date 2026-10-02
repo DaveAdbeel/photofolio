@@ -120,7 +120,8 @@
       if (
         !lightbox.classList.contains("is-open") ||
         lightbox.classList.contains("is-closing")
-      ) return;
+      )
+        return;
 
       lightbox.classList.add("is-closing");
       const finishClose = () => {
@@ -130,7 +131,8 @@
         document.body.style.overflow = "";
         if (index > -1) tiles[index].focus();
       };
-      const duration = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      const duration = window.matchMedia("(prefers-reduced-motion: reduce)")
+        .matches
         ? 0
         : 180;
       closeTimer = window.setTimeout(finishClose, duration);
@@ -147,7 +149,8 @@
       if (
         !lightbox.classList.contains("is-open") ||
         lightbox.classList.contains("is-closing")
-      ) return;
+      )
+        return;
       if (e.key === "Escape") close();
       else if (e.key === "ArrowLeft") render(index - 1);
       else if (e.key === "ArrowRight") render(index + 1);
