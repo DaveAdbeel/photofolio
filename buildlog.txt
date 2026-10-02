@@ -1,0 +1,161 @@
+$ astro build && node scripts/strip-unreferenced-assets.mjs
+[2m00:11:59[22m [34m[content][39m Syncing content
+[33m[1m00:11:59[22m [WARN] [glob-loader][39m The base directory "C:\Users\Daicho\Desktop\dev\Personal\Proyectos\Proyectos\Fotografia\portfolio\src\content\tech\" does not exist.
+[33m[1m00:11:59[22m [WARN] [glob-loader][39m The base directory "C:\Users\Daicho\Desktop\dev\Personal\Proyectos\Proyectos\Fotografia\portfolio\src\content\photography\" does not exist.
+[2m00:11:59[22m [34m[content][39m Synced content
+[2m00:11:59[22m [34m[types][39m Generated [2m567ms[22m
+[2m00:11:59[22m [34m[build][39m output: [34m"static"[39m
+[2m00:11:59[22m [34m[build][39m mode: [34m"static"[39m
+[2m00:11:59[22m [34m[build][39m directory: [34mC:\Users\Daicho\Desktop\dev\Personal\Proyectos\Proyectos\Fotografia\portfolio\dist\[39m
+[2m00:11:59[22m [34m[build][39m Collecting build info...
+[2m00:11:59[22m [34m[build][39m [32mÔ£ô Completed in 626ms.[39m
+[2m00:11:59[22m [34m[build][39m Building static entrypoints...
+[2m00:11:59[22m [34m[vite][39m [32mÔ£ô built in 493ms[39m
+[2m00:11:59[22m [34m[vite][39m [32mÔ£ô built in 28ms[39m
+[2m00:11:59[22m [34m[build][39m Rearranging server assets...
+
+[42m[30m generating static routes [39m[49m
+[2m00:12:00[22m   [34mÔö£ÔöÇ[39m [2m/about/index.html[22m [2m(+25ms)[22m 
+[2m00:12:00[22m   [34mÔö£ÔöÇ[39m [2m/contact/index.html[22m [2m(+7ms)[22m 
+[2m00:12:00[22m   [34mÔö£ÔöÇ[39m [2m/license/index.html[22m [2m(+7ms)[22m 
+[2m00:12:00[22m   [34mÔö£ÔöÇ[39m [2m/llms.txt[22m [2m(+4ms)[22m 
+[2m00:12:00[22m   [34mÔö£ÔöÇ[39m [2m/privacy/index.html[22m [2m(+6ms)[22m 
+[2m00:12:00[22m   [34mÔö£ÔöÇ[39m [2m/robots.txt[22m [2m(+4ms)[22m 
+[2m00:12:00[22m   [34mÔö£ÔöÇ[39m [2m/index.html[22m [2m(+16ms)[22m 
+[2m00:12:00[22m [32mÔ£ô Completed in 91ms.
+[39m
+[42m[30m generating optimized images [39m[49m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/seal.Cfi2zFdP_1ntrlx.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(1/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/seal-dark.Dm2sIMxJ_Z2c66gF.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(2/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9879-Mejorado-NR.CMxAKlQ5_Z1CW4Ea.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(3/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9933-Mejorado-NR.rKhnC273_ZsjkkB.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(4/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9759-Mejorado-NR.CI2ccjSc_1Ox2co.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(5/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL3859.C6IB-C4O_1aIaBH.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(6/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2648.BneFOHei_2uEVDb.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(7/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2613.DfK4iBJT_Z2dGT4T.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(8/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2520.BKNBI24r_1pfPs.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(9/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2528.f41JCzLP_Z2fU7CQ.webp [2m(reused cache entry)[22m [2m(+7ms)[22m [2m(10/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2480.Be1FCyYM_9vXiI.webp [2m(reused cache entry)[22m [2m(+7ms)[22m [2m(11/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2456.DqiOIhn__1oJye7.webp [2m(reused cache entry)[22m [2m(+7ms)[22m [2m(12/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/seal.Cfi2zFdP_Z1ADH9C.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(13/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/seal-dark.Dm2sIMxJ_Z2caNd9.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(14/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9879-Mejorado-NR.CMxAKlQ5_ZvkvkA.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(15/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9933-Mejorado-NR.rKhnC273_hWuR9.webp [2m(reused cache entry)[22m [2m(+7ms)[22m [2m(16/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9759-Mejorado-NR.CI2ccjSc_aLVb4.webp [2m(reused cache entry)[22m [2m(+7ms)[22m [2m(17/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL3859.C6IB-C4O_1fQsCE.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(18/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2648.BneFOHei_1HCcOU.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(19/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2613.DfK4iBJT_Z2rp1Ds.webp [2m(reused cache entry)[22m [2m(+7ms)[22m [2m(20/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2520.BKNBI24r_17D8lz.webp [2m(reused cache entry)[22m [2m(+7ms)[22m [2m(21/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2528.f41JCzLP_1v4dU0.webp [2m(reused cache entry)[22m [2m(+7ms)[22m [2m(22/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2480.Be1FCyYM_9Q4SL.webp [2m(reused cache entry)[22m [2m(+7ms)[22m [2m(23/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2456.DqiOIhn__Z1LONYv.webp [2m(reused cache entry)[22m [2m(+7ms)[22m [2m(24/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/seal.Cfi2zFdP_uph99.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(25/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/seal-dark.Dm2sIMxJ_Z2cfv9C.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(26/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9879-Mejorado-NR.CMxAKlQ5_Vx8jq.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(27/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9933-Mejorado-NR.rKhnC273_1JP9wa.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(28/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL3859.C6IB-C4O_Z2d2TnN.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(29/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2648.BneFOHei_Z1Khabx.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(30/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9759-Mejorado-NR.CI2ccjSc_1CEzP5.webp [2m(reused cache entry)[22m [2m(+7ms)[22m [2m(31/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2613.DfK4iBJT_ZP7fPY.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(32/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2528.f41JCzLP_Z1WP96s.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(33/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2520.BKNBI24r_Z2lgeES.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(34/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2480.Be1FCyYM_1L8PGf.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(35/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2456.DqiOIhn__Zax3c2.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(36/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/seal.Cfi2zFdP_Z1K0akn.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(37/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/seal-dark.Dm2sIMxJ_1jjEiI.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(38/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9879-Mejorado-NR.CMxAKlQ5_UnpQ5.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(39/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2451.DI5-NMHy_Z18yPvf.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(40/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9933-Mejorado-NR.rKhnC273_1IFr3O.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(41/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2363.DLkuv9aI_Z1e4bao.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(42/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2306.DWyiUnMR_Z2fTUxM.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(43/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9759-Mejorado-NR.CI2ccjSc_1BuRmJ.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(44/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2237.Dj7uo2ZX_Z1nrjDV.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(45/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1608.P6UnCjBq_Z2jYt1o.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(46/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1305.CR2LbAHC_23e3jE.webp [2m(reused cache entry)[22m [2m(+7ms)[22m [2m(47/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1175.DO-gPMg0_Z2059kS.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(48/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9879-Mejorado-NR.CMxAKlQ5_1zYnJ8.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(49/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1069.BRZ_G55K_ZHY4gz.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(50/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9933-Mejorado-NR.rKhnC273_2ohoVR.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(51/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2451.DI5-NMHy_DtU3g.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(52/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1003.TdjKKV3-_1yLTmU.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(53/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2363.DLkuv9aI_Z28Uzlj.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(54/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2306.DWyiUnMR_1vamu2.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(55/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9759-Mejorado-NR.CI2ccjSc_2h6PfM.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(56/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2237.Dj7uo2ZX_Z1OtJx9.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(57/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1608.P6UnCjBq_Zy8D2L.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(58/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1305.CR2LbAHC_Z2la9JD.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(59/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1175.DO-gPMg0_ZBpUzS.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(60/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1069.BRZ_G55K_vRa8D.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(61/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2451.DI5-NMHy_2fLFPJ.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(62/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9879-Mejorado-NR.CMxAKlQ5_1fk2Ko.webp [2m(reused cache entry)[22m [2m(+7ms)[22m [2m(63/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1003.TdjKKV3-_lWrJN.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(64/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9933-Mejorado-NR.rKhnC273_23C3X8.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(65/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2363.DLkuv9aI_ZwCNxP.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(66/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2306.DWyiUnMR_Z1WJ0wq.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(67/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL9759-Mejorado-NR.CI2ccjSc_1Vruh3.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(68/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL2237.Dj7uo2ZX_ZdbXJF.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(69/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1608.P6UnCjBq_1397JH.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(70/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0818-Mejorado-NR.D6jdEQjK_1pzQzA.webp [2m(reused cache entry)[22m [2m(+7ms)[22m [2m(71/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1069.BRZ_G55K_ZVB9Kd.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(72/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1175.DO-gPMg0_YQPcA.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(73/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0774-Mejorado-NR.Bn-ooTJ__Z15WJbC.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(74/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0717-Mejorado-NR.D-XBz6VB_ZLpoyC.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(75/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1003.TdjKKV3-_Z16vR93.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(76/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0599-Mejorado-NR.B1K-dZgO_aymiu.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(77/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0520-Mejorado-NR.C6nKA7oj_PQ9gQ.webp [2m(reused cache entry)[22m [2m(+7ms)[22m [2m(78/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0243-Mejorado-NR.WdxFhRN-_1hRbsl.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(79/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0216-Mejorado-NR.td6-vOT0_Z1jHRdM.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(80/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0124-Mejorado-NR.B5cz8FpG_Z2ajMT7.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(81/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1069.BRZ_G55K_2hO4j8.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(82/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0818-Mejorado-NR.D6jdEQjK_Z2knanX.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(83/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0774-Mejorado-NR.Bn-ooTJ__YIrHn.webp [2m(reused cache entry)[22m [2m(+6ms)[22m [2m(84/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0717-Mejorado-NR.D-XBz6VB_KgDnv.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(85/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1003.TdjKKV3-_27TlUi.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(86/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0599-Mejorado-NR.B1K-dZgO_2bbfPb.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(87/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0520-Mejorado-NR.C6nKA7oj_lGolT.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(88/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0243-Mejorado-NR.WdxFhRN-_1ilJ74.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(89/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0216-Mejorado-NR.td6-vOT0_ZTvtyL.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(90/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0124-Mejorado-NR.B5cz8FpG_Z1Hhytg.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(91/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1069.BRZ_G55K_1a9rWC.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(92/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0818-Mejorado-NR.D6jdEQjK_ZRuvIW.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(93/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0717-Mejorado-NR.D-XBz6VB_2d9i2w.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(94/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0774-Mejorado-NR.Bn-ooTJ__2rB6mo.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(95/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1003.TdjKKV3-_10eJyM.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(96/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0599-Mejorado-NR.B1K-dZgO_Z1GCAKv.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(97/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0520-Mejorado-NR.C6nKA7oj_1Nz30U.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(98/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0243-Mejorado-NR.WdxFhRN-_2uJ1kj.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(99/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0216-Mejorado-NR.td6-vOT0_xma5f.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(100/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0124-Mejorado-NR.B5cz8FpG_ZfoTOf.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(101/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1069.BRZ_G55K_ZI72NL.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(102/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0818-Mejorado-NR.D6jdEQjK_ZSEeci.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(103/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0717-Mejorado-NR.D-XBz6VB_2bYzzb.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(104/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0774-Mejorado-NR.Bn-ooTJ__2qrnT3.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(105/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL1003.TdjKKV3-_ZS1KcB.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(106/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0520-Mejorado-NR.C6nKA7oj_1Mpkxz.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(107/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0599-Mejorado-NR.B1K-dZgO_1iWzUN.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(108/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0243-Mejorado-NR.WdxFhRN-_q84cG.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(109/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0216-Mejorado-NR.td6-vOT0_wcrBT.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(110/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0124-Mejorado-NR.B5cz8FpG_ZgyChA.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(111/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0818-Mejorado-NR.D6jdEQjK_Z2naFqe.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(112/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0520-Mejorado-NR.C6nKA7oj_2s1iqC.webp [2m(reused cache entry)[22m [2m(+3ms)[22m [2m(113/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0774-Mejorado-NR.Bn-ooTJ__Z1Y8M1P.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(114/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0717-Mejorado-NR.D-XBz6VB_Z2dAAlH.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(115/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0599-Mejorado-NR.B1K-dZgO_ZDDAez.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(116/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0243-Mejorado-NR.WdxFhRN-_Z1wt6WG.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(117/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0216-Mejorado-NR.td6-vOT0_1bNpuW.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(118/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0124-Mejorado-NR.B5cz8FpG_o2kAs.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(119/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0818-Mejorado-NR.D6jdEQjK_ZyHBhY.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(120/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0520-Mejorado-NR.C6nKA7oj_27lWrS.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(121/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0717-Mejorado-NR.D-XBz6VB_2vVctu.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(122/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0774-Mejorado-NR.Bn-ooTJ__Z2jN80z.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(123/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0243-Mejorado-NR.WdxFhRN-_ZFAzUk.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(124/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0599-Mejorado-NR.B1K-dZgO_cdUMM.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(125/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0216-Mejorado-NR.td6-vOT0_Q94wd.webp [2m(reused cache entry)[22m [2m(+4ms)[22m [2m(126/127)[22m
+[2m00:12:00[22m   [32mÔûÂ[39m /_astro/IMGL0124-Mejorado-NR.B5cz8FpG_3mYBI.webp [2m(reused cache entry)[22m [2m(+5ms)[22m [2m(127/127)[22m
+[2m00:12:00[22m [32mÔ£ô Completed in 69ms.
+[39m
+[2m00:12:00[22m [34m[build][39m [32mÔ£ô Completed in 1.01s.[39m
+[2m00:12:00[22m [34m[@astrojs/sitemap][39m `sitemap-index.xml` created at `dist`
+[2m00:12:00[22m [34m[build][39m 5 page(s) built in [1m1.68s[22m
+[2m00:12:00[22m [34m[build][39m [1mComplete![22m
+strip-unreferenced-assets: removed 27 orphaned image file(s) (72.6 MB).

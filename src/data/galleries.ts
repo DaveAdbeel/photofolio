@@ -1,44 +1,46 @@
 // ────────────────────────────────────────────────────────────────────────────
-//  Digital & Analog galleries — one optional description per photo.
+//  Digital gallery — files from src/assets/gallery/.
 //
-//  Mirrors src/data/calendar.ts. Each entry attaches a caption to a photo in
-//  src/assets/digital/ or src/assets/analog/, rendered as "Month Year, Location"
-//  — the same format as the Calendar — under the photo and in the lightbox.
-//
-//  To describe a photo, fill in its year, month (1–12) and location below. A
-//  caption stays hidden until you add a location, so a blank entry simply shows
-//  the photo on its own.
-//
-//  These dates also control the gallery order: newest month/year first, and
-//  within the same month, locations sort Z→A. Photos without a date yet sink
-//  to the bottom — no filename renumbering needed when adding older photos.
-//
-//  The entries below are EXAMPLES that match the bundled placeholder images.
-//  Replace the locations with real ones (or delete entries) as you add photos.
+//  Each entry can later receive a year, month and location to show captions in
+//  the gallery and lightbox. For now, all entries are intentionally blank so the
+//  new photos appear immediately and you can add the descriptions yourself later.
 // ────────────────────────────────────────────────────────────────────────────
 
 export interface GalleryPhoto {
   year: number; // e.g. 2025  (0 = not set yet)
   month: number; // 1–12       (0 = not set yet)
   location: string; // e.g. "Lisbon, Portugal"
-  file: string; // filename in src/assets/digital/ or src/assets/analog/
+  file: string; // filename in src/assets/gallery/
 }
 
 export const digital: GalleryPhoto[] = [
-  { year: 2024, month: 9, location: "Mountain ridge", file: "digital-01.jpg" },
-  { year: 2024, month: 9, location: "Coastal cliffs", file: "digital-02.jpg" },
-  { year: 2024, month: 7, location: "Old harbor", file: "digital-03.jpg" },
-  { year: 2024, month: 6, location: "Pine forest", file: "digital-04.jpg" },
-  // The rest have no caption yet — they simply show on their own until you add a location.
-  { year: 0, month: 0, location: "", file: "digital-05.jpg" },
-  { year: 0, month: 0, location: "", file: "digital-06.jpg" },
-  { year: 0, month: 0, location: "", file: "digital-07.jpg" },
-  { year: 0, month: 0, location: "", file: "digital-08.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL1003.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL0818-Mejorado-NR.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL0774-Mejorado-NR.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL0717-Mejorado-NR.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL0599-Mejorado-NR.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL0520-Mejorado-NR.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL0243-Mejorado-NR.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL0216-Mejorado-NR.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL0124-Mejorado-NR.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL2363.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL2306.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL2237.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL1608.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL1305.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL1175.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL1069.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL2480.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL2456.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL2451.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL2528.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL2520.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL2613.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL2648.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL9933-Mejorado-NR.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL9879-Mejorado-NR.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL9759-Mejorado-NR.jpg" },
+  { year: 0, month: 0, location: "", file: "IMGL3859.jpg" },
 ];
 
-export const analog: GalleryPhoto[] = [
-  { year: 2024, month: 5, location: "Quiet street", file: "analog-01.jpg" },
-  { year: 2024, month: 5, location: "River bend", file: "analog-02.jpg" },
-  { year: 0, month: 0, location: "", file: "analog-03.jpg" },
-  { year: 0, month: 0, location: "", file: "analog-04.jpg" },
-];
+export const analog: GalleryPhoto[] = [];

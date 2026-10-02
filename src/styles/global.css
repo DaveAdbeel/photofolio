@@ -334,7 +334,7 @@ a {
 /* ── Photo grid ────────────────────────────────────────────────────────── */
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--gap);
 }
 
@@ -348,14 +348,14 @@ a {
   background: var(--line);
   cursor: pointer;
   overflow: hidden;
-  /* Matched to 3:2 photos: tiles fill edge-to-edge with no cropping. */
-  aspect-ratio: 3 / 2;
+  break-inside: avoid;
 }
 
 .photo__img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   transition: transform 0.7s ease;
 }
 
@@ -394,17 +394,42 @@ a {
   border-radius: 3px;
 }
 
-/* Calendar gallery — a captioned grid (month + location under each photo) */
+/* Calendar gallery — a Pinterest-like masonry mosaic with a more organic rhythm */
 .calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: calc(var(--gap) + 0.7rem) var(--gap);
+  column-count: 3;
+  column-gap: calc(var(--gap) * 1.2);
+  padding-bottom: 0.5rem;
 }
 
 .calendar-item {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 calc(var(--gap) + 0.4rem);
+  break-inside: avoid;
+  page-break-inside: avoid;
+  transition: transform 0.25s ease;
+}
+
+.calendar-item .photo-tile {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(17, 17, 17, 0.08);
+}
+
+.calendar-item:nth-child(4n + 1),
+.calendar-item:nth-child(4n + 4) {
+  transform: translateY(1.1rem);
+}
+
+.calendar-item:nth-child(4n + 2),
+.calendar-item:nth-child(4n + 3) {
+  transform: translateY(-0.6rem);
+}
+
+.calendar-item:hover {
+  transform: translateY(-0.15rem);
 }
 
 .calendar-caption {
@@ -412,6 +437,30 @@ a {
   font-size: 1rem;
   color: var(--muted);
   letter-spacing: 0.01em;
+}
+
+@media (max-width: 1024px) {
+  .calendar-grid {
+    column-count: 2;
+    column-gap: var(--gap);
+  }
+
+  .calendar-item:nth-child(4n + 1),
+  .calendar-item:nth-child(4n + 4),
+  .calendar-item:nth-child(4n + 2),
+  .calendar-item:nth-child(4n + 3) {
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .calendar-grid {
+    column-count: 1;
+  }
+
+  .calendar-item .photo-tile {
+    border-radius: 10px;
+  }
 }
 
 /* ── Lightbox ──────────────────────────────────────────────────────────── */

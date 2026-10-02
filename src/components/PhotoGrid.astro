@@ -15,7 +15,7 @@ const { collection } = Astro.props;
 // from the per-photo dates in src/data/galleries.ts (see the sort below), so
 // filenames don't need renumbering when an older photo is added later.
 const digital = import.meta.glob<{ default: ImageMetadata }>(
-  '../assets/digital/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}',
+  '../assets/gallery/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}',
   { eager: true }
 );
 const analog = import.meta.glob<{ default: ImageMetadata }>(
