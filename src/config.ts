@@ -16,8 +16,7 @@ export const site = {
   // for how to self-host a font subset so it renders identically on every device.
   nameZh: '',
   title: 'David Astudillo',
-  description:
-    'Un portafolio fotográfico minimalista — galerías digitales y analógicas.',
+  description: 'Un pedazo digital de mí.',
 };
 
 export const withBase = (path: string) =>
