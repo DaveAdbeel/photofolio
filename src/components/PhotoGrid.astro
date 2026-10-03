@@ -178,6 +178,8 @@ const jsonLd = {
 
     const updateColumnMotion = () => {
       const bounds = grid.getBoundingClientRect();
+      const headingBottom =
+        grid.previousElementSibling?.getBoundingClientRect().bottom;
       const progress = Math.max(
         0,
         Math.min(
@@ -186,13 +188,18 @@ const jsonLd = {
             (window.innerHeight + bounds.height),
         ),
       );
-      const amplitude = Math.min(200, window.innerHeight * 0.3);
+      const amplitude = Math.min(320, window.innerHeight * 0.42);
       const distance = reducedMotion.matches
         ? 0
         : Math.sin(progress * Math.PI) * amplitude;
+      const upwardLimit =
+        headingBottom !== undefined
+          ? Math.max(0, bounds.top - headingBottom)
+          : amplitude;
       columns.forEach((column, index) => {
         const direction = index % 2 === 0 ? -1 : 1;
-        column.style.setProperty("--column-shift", `${distance * direction}px`);
+        const shift = Math.max(-upwardLimit, distance * direction);
+        column.style.setProperty("--column-shift", `${shift}px`);
       });
     };
 

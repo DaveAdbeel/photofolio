@@ -1,13 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PhotoGrid from "../components/PhotoGrid.astro";
+import GalleryContactPrompt from "../components/GalleryContactPrompt.astro";
 import { withBase } from "../config";
 ---
 
 <Layout>
   <h1 class="gallery-label">Digital</h1>
   <PhotoGrid collection="digital" />
-  <section class="gallery-cta" aria-labelledby="gallery-cta-title">
+  <section id="gallery-cta" class="gallery-cta" aria-labelledby="gallery-cta-title">
     <div class="gallery-cta__copy">
       <h2 id="gallery-cta-title">¿Tienes un proyecto en mente?</h2>
       <p>Hablemos de cómo contar tu historia a través de la fotografía.</p>
@@ -16,4 +17,5 @@ import { withBase } from "../config";
       Contáctame <span aria-hidden="true">→</span>
     </a>
   </section>
+  <GalleryContactPrompt />
 </Layout>
