@@ -1,6 +1,6 @@
 ---
 // Shared full-screen photo viewer. Wires up every `.photo-tile` button on the
-// page (each carries data-full, data-alt, and optional data-caption).
+// page (each carries data-full, data-alt, and optional caption/quote data).
 ---
 
 <div
@@ -21,7 +21,10 @@
   >
   <figure class="lightbox__figure">
     <img class="lightbox__img" alt="" draggable="false" />
-    <figcaption class="lightbox__caption" hidden></figcaption>
+    <figcaption class="lightbox__caption" hidden>
+      <p class="lightbox__quote" hidden></p>
+      <span class="lightbox__meta" hidden></span>
+    </figcaption>
   </figure>
   <button
     class="lightbox__nav lightbox__next"
@@ -39,6 +42,8 @@
   if (lightbox && tiles.length) {
     const image = lightbox.querySelector(".lightbox__img") as HTMLImageElement;
     const caption = lightbox.querySelector(".lightbox__caption") as HTMLElement;
+    const quote = lightbox.querySelector(".lightbox__quote") as HTMLElement;
+    const meta = lightbox.querySelector(".lightbox__meta") as HTMLElement;
     const btnClose = lightbox.querySelector(
       ".lightbox__close",
     ) as HTMLButtonElement;
@@ -57,9 +62,13 @@
       index = (i + tiles.length) % tiles.length;
       const tile = tiles[index];
       image.alt = tile.dataset.alt ?? "";
-      const cap = tile.dataset.caption ?? "";
-      caption.textContent = cap;
-      caption.hidden = cap === "";
+      const quoteText = tile.dataset.quote ?? "";
+      const captionText = tile.dataset.caption ?? "";
+      quote.textContent = quoteText;
+      quote.hidden = quoteText === "";
+      meta.textContent = captionText;
+      meta.hidden = captionText === "";
+      caption.hidden = quoteText === "" && captionText === "";
       if (shown === index) return; // already displaying this photo
       shown = index;
       const ticket = ++seq;
