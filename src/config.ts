@@ -36,5 +36,5 @@ export const social = {
   instagram: 'https://www.instagram.com/daichho',
   linkedin: 'https://www.linkedin.com/in/david-astudillo-599ba9220/',
   github: 'https://github.com/daveadbeel',
-  whatsapp: 'https://wa.me/REEMPLAZA_CON_TU_NUMERO',
+  whatsapp: 'https://wa.me/+56982219625',
 };
